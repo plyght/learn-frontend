@@ -16,26 +16,37 @@ export default function Home() {
           </p>
         </header>
 
-        {days.length === 0 ? (
-          <div className="text-center p-8 border border-dashed border-[var(--border)] rounded-sm">
-            <p className="text-[var(--muted-foreground)] mb-3 text-sm">
-              no days found. create your first day
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+          <Link
+            href="/guide"
+            className="block p-4 border border-[var(--border)] rounded-sm hover:border-[var(--border-hover)] transition-colors bg-[var(--muted)]"
+          >
+            <h2 className="text-sm font-mono font-semibold mb-1">
+              guide
+            </h2>
+            <p className="text-xs text-[var(--muted-foreground)]">
+              UI recreation guide →
             </p>
-            <p className="text-xs text-[var(--muted-foreground)] opacity-70">
-              create a folder like{" "}
-              <code className="bg-[var(--muted)] px-1.5 py-0.5 rounded-sm border border-[var(--border)]">
-                app/day-1
-              </code>{" "}
-              with a{" "}
-              <code className="bg-[var(--muted)] px-1.5 py-0.5 rounded-sm border border-[var(--border)]">
-                Component.tsx
-              </code>{" "}
-              file
-            </p>
-          </div>
-        ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
-            {days.map((day) => {
+          </Link>
+          {days.length === 0 ? (
+            <div className="col-span-full text-center p-8 border border-dashed border-[var(--border)] rounded-sm">
+              <p className="text-[var(--muted-foreground)] mb-3 text-sm">
+                no days found. create your first day
+              </p>
+              <p className="text-xs text-[var(--muted-foreground)] opacity-70">
+                create a folder like{" "}
+                <code className="bg-[var(--muted)] px-1.5 py-0.5 rounded-sm border border-[var(--border)]">
+                  app/day-1
+                </code>{" "}
+                with a{" "}
+                <code className="bg-[var(--muted)] px-1.5 py-0.5 rounded-sm border border-[var(--border)]">
+                  Component.tsx
+                </code>{" "}
+                file
+              </p>
+            </div>
+          ) : (
+            days.map((day) => {
               const dayNumber = day.replace("day-", "");
               return (
                 <Link
@@ -51,9 +62,9 @@ export default function Home() {
                   </p>
                 </Link>
               );
-            })}
-          </div>
-        )}
+            })
+          )}
+        </div>
       </div>
     </div>
   );

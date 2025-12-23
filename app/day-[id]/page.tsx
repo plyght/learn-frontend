@@ -28,7 +28,9 @@ export default async function DayPage({ params }: PageProps) {
           >
             ← back
           </Link>
-          <h1 className="text-xl font-mono font-semibold tracking-tight">day-{id}</h1>
+          <h1 className="text-xl font-mono font-semibold tracking-tight">
+            day-{id}
+          </h1>
         </header>
 
         <ComponentViewer

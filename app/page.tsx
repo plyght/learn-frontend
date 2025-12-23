@@ -8,7 +8,9 @@ export default function Home() {
     <div className="min-h-screen p-6">
       <div className="max-w-5xl mx-auto">
         <header className="mb-8 border-b border-[var(--border)] pb-6">
-          <h1 className="text-2xl font-mono font-semibold mb-2 tracking-tight">component-library</h1>
+          <h1 className="text-2xl font-mono font-semibold mb-2 tracking-tight">
+            component-library
+          </h1>
           <p className="text-sm text-[var(--muted-foreground)]">
             daily component explorations
           </p>
@@ -41,7 +43,9 @@ export default function Home() {
                   href={`/day-${dayNumber}`}
                   className="block p-4 border border-[var(--border)] rounded-sm hover:border-[var(--border-hover)] transition-colors"
                 >
-                  <h2 className="text-sm font-mono font-semibold mb-1">day-{dayNumber}</h2>
+                  <h2 className="text-sm font-mono font-semibold mb-1">
+                    day-{dayNumber}
+                  </h2>
                   <p className="text-xs text-[var(--muted-foreground)]">
                     view component →
                   </p>

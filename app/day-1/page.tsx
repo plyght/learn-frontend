@@ -22,10 +22,16 @@ export default async function Day1Page() {
           >
             ← back
           </Link>
-          <h1 className="text-xl font-mono font-semibold tracking-tight">day-1</h1>
+          <h1 className="text-xl font-mono font-semibold tracking-tight">
+            day-1
+          </h1>
         </header>
 
-        <ComponentViewer component={<DayComponent />} files={files} dayId={dayId} />
+        <ComponentViewer
+          component={<DayComponent />}
+          files={files}
+          dayId={dayId}
+        />
       </div>
     </div>
   );

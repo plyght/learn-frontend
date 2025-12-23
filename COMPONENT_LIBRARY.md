@@ -114,3 +114,4 @@ All files (except `page.tsx`) will appear in the file tree navigator.
 - TypeScript 5.9.3
 - Bun (package manager)
 
+

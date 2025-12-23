@@ -19,3 +19,4 @@ export function DynamicComponent({ dayId }: DynamicComponentProps) {
   return <Component />;
 }
 
+

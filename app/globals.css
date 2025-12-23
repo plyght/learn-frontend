@@ -14,6 +14,39 @@
   --code-line-number-bg: #fafafa;
   --code-line-number: #6b6b6b;
   --code-text: #8b949e;
+
+  /* Ceramic Color System */
+  --ceramic-gray-50: #fafafb;
+  --ceramic-gray-100: #f6f6f7;
+  --ceramic-gray-200: #ececee;
+  --ceramic-gray-300: #dbdbe0;
+  --ceramic-gray-400: #c7c7cf;
+  --ceramic-gray-500: #adadb7;
+  --ceramic-gray-600: #90909d;
+  --ceramic-gray-700: #767684;
+  --ceramic-gray-800: #5f5f6f;
+  --ceramic-gray-900: #4c4c5c;
+  --ceramic-gray-1000: #3d3d4a;
+  --ceramic-gray-1100: #33333e;
+  --ceramic-gray-1200: #2b2b34;
+  --ceramic-gray-1300: #232328;
+  --ceramic-gray-1400: #1b1b1f;
+  --ceramic-gray-1500: #111113;
+  --ceramic-green-400: #31c854;
+  --ceramic-green-500: #1eb43c;
+  --ceramic-orange-500: #fd7224;
+  --ceramic-white: #fff;
+  --ceramic-black: #000;
+  --ceramic-primary: var(--ceramic-gray-100);
+  --ceramic-secondary: var(--ceramic-gray-500);
+  --ceramic-positive: var(--ceramic-green-400);
+  --ceramic-warning: var(--ceramic-orange-500);
+  --ceramic-bg-separator: var(--ceramic-gray-1300);
+  
+  /* Force dark mode ceramic colors */
+  --ceramic-primary: #f6f6f7;
+  --ceramic-secondary: #adadb7;
+  --ceramic-bg-separator: #232328;
 }
 
 @theme inline {
@@ -38,6 +71,11 @@
     --code-line-number-bg: #161616;
     --code-line-number: #6e7681;
     --code-text: #8b949e;
+
+    /* Ceramic Color System - Dark Mode */
+    --ceramic-primary: var(--ceramic-gray-100);
+    --ceramic-secondary: var(--ceramic-gray-500);
+    --ceramic-bg-separator: var(--ceramic-gray-1300);
   }
 }
 
@@ -71,6 +109,11 @@
   --code-line-number-bg: #161616;
   --code-line-number: #6e7681;
   --code-text: #8b949e;
+
+  /* Ceramic Color System - Dark Theme */
+  --ceramic-primary: var(--ceramic-gray-100);
+  --ceramic-secondary: var(--ceramic-gray-500);
+  --ceramic-bg-separator: var(--ceramic-gray-1300);
 }
 
 body {

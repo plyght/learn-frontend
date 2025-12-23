@@ -45,12 +45,13 @@ function DayImage({ dayId }: { dayId?: string }) {
   return (
     <div className="p-6 border border-[var(--border)] rounded-sm bg-[var(--background)] min-h-[200px] flex items-center justify-center">
       {currentImagePath && !imageError ? (
-        <div className="relative w-full h-full min-h-[200px]">
+        <div className="relative w-full h-[400px] max-h-[600px]">
           <Image
             src={currentImagePath}
             alt={`Day ${dayId?.replace("day-", "") || ""} reference`}
             fill
             className="object-contain"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             onError={handleImageError}
           />
         </div>

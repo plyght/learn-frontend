@@ -70,3 +70,4 @@ export function getAllDays(): string[] {
 
   return days;
 }
+

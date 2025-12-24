@@ -151,7 +151,7 @@ export default function Day2Component() {
                       {/* Provider Column */}
                       <td className={`${cellBaseClasses} w-44 sm:w-[18rem]`}>
                         <div className="flex items-center gap-3 max-w-36 sm:max-w-[16rem]">
-                          <span className="flex items-center justify-center w-10 h-10 rounded-md shrink-0">
+                          <span className="flex items-center justify-center w-10 h-10 rounded-md shrink-0 border-2 border-(--ceramic-bg-separator)">
                             <GoogleIcon />
                           </span>
                           <span className="flex flex-col min-w-0">

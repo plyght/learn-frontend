@@ -28,6 +28,29 @@ export default function Home() {
               UI recreation guide →
             </p>
           </Link>
+          <Link
+            href="/concentric-rounding"
+            className="block p-4 border border-[var(--border)] rounded-sm hover:border-[var(--border-hover)] transition-colors bg-[var(--muted)]"
+          >
+            <h2 className="text-sm font-mono font-semibold mb-1">
+              concentric-rounding
+            </h2>
+            <p className="text-xs text-[var(--muted-foreground)]">
+              Radius & padding guide →
+            </p>
+          </Link>
+          <Link
+            href="/spacing"
+            className="block p-4 border border-[var(--border)] rounded-sm hover:border-[var(--border-hover)] transition-colors bg-[var(--muted)]"
+          >
+            <h2 className="text-sm font-mono font-semibold mb-1">
+              spacing
+            </h2>
+            <p className="text-xs text-[var(--muted-foreground)]">
+              Spacing systems guide →
+            </p>
+          </Link>
+         
           {days.length === 0 ? (
             <div className="col-span-full text-center p-8 border border-dashed border-[var(--border)] rounded-sm">
               <p className="text-[var(--muted-foreground)] mb-3 text-sm">

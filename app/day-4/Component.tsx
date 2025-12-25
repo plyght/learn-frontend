@@ -1,15 +1,28 @@
 "use client";
 
-import { ChevronRight, Menu, X } from "lucide-react";
-import { useState } from "react";
+import { Menu, X } from "lucide-react";
+import { useState, useEffect } from "react";
 
 export default function Day4Component() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollDistance = window.scrollY;
+      const maxScroll = 200;
+      const progress = Math.min(scrollDistance / maxScroll, 1);
+      setScrollProgress(progress);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   // CSS Variables for the design system
   const styles = {
-    '--font-sans': '"Inter", system-ui, sans-serif',
-    '--font-display': '"Familjen Grotesk", sans-serif',
+    '--font-sans': '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
+    '--font-display': '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
     '--spacing': '0.25rem',
     '--container-7xl': '80rem',
     '--text-sm': '0.875rem',
@@ -29,12 +42,23 @@ export default function Day4Component() {
   } as React.CSSProperties;
 
   return (
-      <div className="flex flex-col w-full bg-white" style={{ ...styles, fontFamily: 'var(--font-sans)' }}>
+      <div 
+        className="flex flex-col w-full" 
+        style={{ 
+          ...styles, 
+          fontFamily: 'var(--font-sans)', 
+          backgroundColor: '#F1F3F2',
+          WebkitFontSmoothing: 'antialiased',
+          MozOsxFontSmoothing: 'grayscale'
+        }}
+      >
         {/* Navigation Header */}
         <header 
-          className="sticky top-0 z-50 bg-white border-b"
+          className="sticky top-0 z-50"
           style={{ 
-            borderColor: 'var(--color-mist-200)',
+            backgroundColor: `rgba(241, 243, 242, ${0.5 + (scrollProgress * 0.5)})`,
+            backdropFilter: `blur(${scrollProgress * 16}px) saturate(${100 + (scrollProgress * 80)}%)`,
+            WebkitBackdropFilter: `blur(${scrollProgress * 16}px) saturate(${100 + (scrollProgress * 80)}%)`,
             paddingTop: 'var(--scroll-padding-top)'
           }}
         >
@@ -52,7 +76,6 @@ export default function Day4Component() {
                   }}
                 >
                   Pricing
-                  <ChevronRight className="w-4 h-4 ml-1" />
                 </a>
                 <a 
                   href="#" 
@@ -64,7 +87,6 @@ export default function Day4Component() {
                   }}
                 >
                   About
-                  <ChevronRight className="w-4 h-4 ml-1" />
                 </a>
                 <a 
                   href="#" 
@@ -76,19 +98,6 @@ export default function Day4Component() {
                   }}
                 >
                   Docs
-                  <ChevronRight className="w-4 h-4 ml-1" />
-                </a>
-                <a 
-                  href="#" 
-                  className="flex items-center"
-                  style={{ 
-                    fontSize: 'var(--text-sm)',
-                    fontWeight: 'var(--font-weight-medium)',
-                    color: 'var(--color-mist-950)'
-                  }}
-                >
-                  Log in
-                  <ChevronRight className="w-4 h-4 ml-1" />
                 </a>
               </div>
 
@@ -124,12 +133,12 @@ export default function Day4Component() {
                   href="#"
                   className="inline-flex items-center justify-center"
                   style={{
-                    padding: 'calc(var(--spacing)*4) calc(var(--spacing)*6)',
+                    padding: 'calc(var(--spacing)*2) calc(var(--spacing)*3)',
                     backgroundColor: 'var(--color-mist-950)',
                     color: 'white',
                     fontSize: 'var(--text-sm)',
                     fontWeight: 'var(--font-weight-medium)',
-                    borderRadius: 'var(--radius-lg)'
+                    borderRadius: '9999px'
                   }}
                 >
                   Get started
@@ -150,7 +159,7 @@ export default function Day4Component() {
 
           {/* Mobile Menu */}
           {mobileMenuOpen && (
-            <div className="lg:hidden border-t bg-white" style={{ borderColor: 'var(--color-mist-200)' }}>
+            <div className="lg:hidden border-t" style={{ backgroundColor: '#F1F3F2', borderColor: 'var(--color-mist-200)' }}>
               <div className="px-4 py-4 space-y-3">
                 <a 
                   href="#" 
@@ -162,7 +171,6 @@ export default function Day4Component() {
                   }}
                 >
                   Pricing
-                  <ChevronRight className="w-4 h-4" />
                 </a>
                 <a 
                   href="#" 
@@ -174,7 +182,6 @@ export default function Day4Component() {
                   }}
                 >
                   About
-                  <ChevronRight className="w-4 h-4" />
                 </a>
                 <a 
                   href="#" 
@@ -186,7 +193,6 @@ export default function Day4Component() {
                   }}
                 >
                   Docs
-                  <ChevronRight className="w-4 h-4" />
                 </a>
                 <a 
                   href="#" 
@@ -198,7 +204,6 @@ export default function Day4Component() {
                   }}
                 >
                   Log in
-                  <ChevronRight className="w-4 h-4" />
                 </a>
               </div>
             </div>
@@ -206,9 +211,9 @@ export default function Day4Component() {
         </header>
 
         {/* Hero Section */}
-        <section className="w-full bg-white">
+        <section className="w-full" style={{ backgroundColor: '#F1F3F2' }}>
           <div 
-            className="mx-auto flex flex-col items-center text-center"
+            className="mx-auto flex flex-col items-start text-left"
             style={{ 
               maxWidth: 'var(--container-7xl)',
               paddingInline: 'calc(var(--spacing)*10)',
@@ -216,7 +221,7 @@ export default function Day4Component() {
               gap: 'calc(var(--spacing)*16)'
             }}
           >
-            <div className="flex flex-col items-center" style={{ gap: 'calc(var(--spacing)*6)' }}>
+            <div className="flex flex-col items-start" style={{ gap: 'calc(var(--spacing)*6)' }}>
               {/* Announcement Banner */}
               <a
                 href="#"
@@ -224,8 +229,8 @@ export default function Day4Component() {
                 style={{
                   padding: 'calc(var(--spacing)*2) calc(var(--spacing)*4)',
                   marginBottom: 'calc(var(--spacing)*8)',
-                  borderRadius: 'var(--radius-md)',
-                  backgroundColor: 'var(--color-mist-100)'
+                  borderRadius: '9999px',
+                  backgroundColor: '#E6E8EA'
                 }}
               >
                 <span 
@@ -238,15 +243,26 @@ export default function Day4Component() {
                   Oatmeal raises 80M Series A funding
                 </span>
                 <span 
-                  className="inline-flex items-center ml-2"
+                  style={{
+                    width: '1px',
+                    height: '0.75rem',
+                    backgroundColor: 'var(--color-mist-400)',
+                    marginLeft: 'calc(var(--spacing)*3)',
+                    marginRight: 'calc(var(--spacing)*3)'
+                  }}
+                />
+                <span 
+                  className="inline-flex items-center"
                   style={{ 
                     fontSize: 'var(--text-sm)',
                     fontWeight: 'var(--font-weight-medium)',
-                    color: 'var(--color-mist-600)'
+                    color: 'var(--color-mist-600)',
+                    gap: 'calc(var(--spacing)*1.5)',
+                    lineHeight: '1'
                   }}
                 >
                   Learn more
-                  <svg width="5" height="8" viewBox="0 0 5 8" fill="currentColor" className="ml-1" style={{ width: '0.3125rem', height: '0.5rem' }}>
+                  <svg width="5" height="8" viewBox="0 0 5 8" fill="currentColor" style={{ width: '0.3125rem', height: '0.5rem', flexShrink: 0, marginTop: '0.125rem' }}>
                     <path fillRule="evenodd" clipRule="evenodd" d="M.22.22a.75.75 0 011.06 0l3.25 3.25a.75.75 0 010 1.06L1.28 7.78A.75.75 0 01.22 6.72L2.94 4 .22 1.28a.75.75 0 010-1.06z" />
                   </svg>
                 </span>
@@ -282,26 +298,26 @@ export default function Day4Component() {
               </div>
 
               {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row items-center justify-center" style={{ gap: 'calc(var(--spacing)*4)' }}>
+              <div className="flex flex-col sm:flex-row items-center justify-start" style={{ gap: 'calc(var(--spacing)*4)' }}>
                 <a
                   href="#"
                   className="inline-flex items-center justify-center"
                   style={{
-                    padding: 'calc(var(--spacing)*3) calc(var(--spacing)*6)',
+                    padding: 'calc(var(--spacing)*2.5) calc(var(--spacing)*3)',
                     backgroundColor: 'var(--color-mist-950)',
                     color: 'white',
                     fontSize: 'var(--text-sm)',
                     fontWeight: 'var(--font-weight-medium)',
-                    borderRadius: 'var(--radius-lg)'
+                    borderRadius: '9999px'
                   }}
                 >
                   Start free trial
                 </a>
                 <a
                   href="#"
-                  className="inline-flex items-center justify-center"
+                  className="inline-flex items-center"
                   style={{
-                    padding: 'calc(var(--spacing)*3) calc(var(--spacing)*6)',
+                    padding: 'calc(var(--spacing)*2) 0',
                     fontSize: 'var(--text-sm)',
                     fontWeight: 'var(--font-weight-medium)',
                     color: 'var(--color-mist-950)',
@@ -329,32 +345,33 @@ export default function Day4Component() {
               </div>
             </div>
 
-            {/* Logo Section */}
+            {/* Image Section */}
             <div 
-              className="flex flex-wrap items-center justify-center w-full"
+              className="flex items-center justify-center w-full"
               style={{ 
-                marginTop: 'calc(var(--spacing)*16)',
-                paddingTop: 'calc(var(--spacing)*12)',
-                borderTop: '1px solid',
-                borderColor: 'var(--color-mist-200)',
-                gap: 'calc(var(--spacing)*8)'
+                marginTop: 'calc(var(--spacing)*16)'
               }}
             >
-              {/* Placeholder logos */}
-              {[1, 2, 3, 4, 5, 6].map((i) => (
-                <div
-                  key={i}
-                  className="flex items-center justify-center"
-                  style={{ 
-                    height: '2rem',
+              <div
+                className="w-full"
+                style={{
+                  borderRadius: 'var(--radius-lg)',
+                  backgroundColor: 'var(--color-mist-200)',
+                  aspectRatio: '16/9',
+                  maxWidth: '100%',
+                  overflow: 'hidden'
+                }}
+              >
+                <div 
+                  className="w-full h-full flex items-center justify-center"
+                  style={{
                     color: 'var(--color-mist-400)',
-                    fontSize: 'var(--text-sm)',
-                    fontWeight: 'var(--font-weight-semibold)'
+                    fontSize: 'var(--text-sm)'
                   }}
                 >
-                  Logo {i}
+                  Image placeholder
                 </div>
-              ))}
+              </div>
             </div>
           </div>
         </section>

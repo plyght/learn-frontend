@@ -3,6 +3,13 @@ import { ComponentViewer } from "@/app/components/ComponentViewer";
 import { getDayFiles } from "@/app/lib/fileUtils";
 import Link from "next/link";
 import DayComponent from "./Component";
+import { Familjen_Grotesk } from "next/font/google";
+
+const familjenGrotesk = Familjen_Grotesk({
+  variable: "--font-familjen",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
 
 export default async function Day4Page() {
   const dayId = "day-4";
@@ -13,7 +20,7 @@ export default async function Day4Page() {
   }
 
   return (
-    <div className="min-h-screen p-6">
+    <div className={`min-h-screen p-6 ${familjenGrotesk.variable}`}>
       <div className="max-w-6xl mx-auto">
         <header className="mb-6 border-b border-[var(--border)] pb-4">
           <Link

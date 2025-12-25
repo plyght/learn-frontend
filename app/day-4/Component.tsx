@@ -21,8 +21,8 @@ export default function Day4Component() {
 
   // CSS Variables for the design system
   const styles = {
-    '--font-sans': '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
-    '--font-display': '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
+    '--font-sans': 'var(--font-familjen), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
+    '--font-display': 'var(--font-familjen), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
     '--spacing': '0.25rem',
     '--container-7xl': '80rem',
     '--text-sm': '0.875rem',
@@ -58,8 +58,7 @@ export default function Day4Component() {
           style={{ 
             backgroundColor: `rgba(241, 243, 242, ${0.5 + (scrollProgress * 0.5)})`,
             backdropFilter: `blur(${scrollProgress * 16}px) saturate(${100 + (scrollProgress * 80)}%)`,
-            WebkitBackdropFilter: `blur(${scrollProgress * 16}px) saturate(${100 + (scrollProgress * 80)}%)`,
-            paddingTop: 'var(--scroll-padding-top)'
+            WebkitBackdropFilter: `blur(${scrollProgress * 16}px) saturate(${100 + (scrollProgress * 80)}%)`
           }}
         >
           <nav className="mx-auto" style={{ maxWidth: 'var(--container-7xl)', paddingInline: 'calc(var(--spacing)*10)' }}>
@@ -217,7 +216,8 @@ export default function Day4Component() {
             style={{ 
               maxWidth: 'var(--container-7xl)',
               paddingInline: 'calc(var(--spacing)*10)',
-              paddingBlock: 'calc(var(--spacing)*16)',
+              paddingTop: 'calc(var(--spacing)*8)',
+              paddingBottom: 'calc(var(--spacing)*16)',
               gap: 'calc(var(--spacing)*16)'
             }}
           >
@@ -271,7 +271,7 @@ export default function Day4Component() {
               {/* Main Headline */}
               <h1 
                 style={{ 
-                  fontSize: 'var(--text-5xl)',
+                  fontSize: '3.5rem',
                   fontWeight: 'var(--font-weight-semibold)',
                   color: 'var(--color-mist-950)',
                   letterSpacing: 'var(--tracking-tight)',
@@ -280,14 +280,14 @@ export default function Day4Component() {
                   marginBottom: 'calc(var(--spacing)*6)'
                 }}
               >
-                Customer support that feels like a conversation.
+                Customer support that<br />feels like a conversation.
               </h1>
 
               {/* Description */}
               <div style={{ marginBottom: 'calc(var(--spacing)*10)' }}>
                 <p 
                   style={{ 
-                    fontSize: 'var(--text-lg)',
+                    fontSize: '1.375rem',
                     color: 'var(--color-mist-600)',
                     lineHeight: '1.6',
                     maxWidth: '42rem'

@@ -12,8 +12,26 @@ interface ComponentViewerProps {
 
 function numberToWord(num: number): string {
   const words = [
-    "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten",
-    "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen", "twenty"
+    "one",
+    "two",
+    "three",
+    "four",
+    "five",
+    "six",
+    "seven",
+    "eight",
+    "nine",
+    "ten",
+    "eleven",
+    "twelve",
+    "thirteen",
+    "fourteen",
+    "fifteen",
+    "sixteen",
+    "seventeen",
+    "eighteen",
+    "nineteen",
+    "twenty",
   ];
   return words[num - 1] || num.toString();
 }
@@ -24,7 +42,7 @@ function getImagePaths(dayId?: string): string[] {
   if (isNaN(dayNumber)) return [];
   const dayWord = numberToWord(dayNumber);
   const formats = ["png", "jpg", "jpeg", "webp"];
-  return formats.map(format => `/days/day ${dayWord}.${format}`);
+  return formats.map((format) => `/days/day ${dayWord}.${format}`);
 }
 
 function DayImage({ dayId }: { dayId?: string }) {
@@ -64,7 +82,11 @@ function DayImage({ dayId }: { dayId?: string }) {
   );
 }
 
-export function ComponentViewer({ component, files, dayId }: ComponentViewerProps) {
+export function ComponentViewer({
+  component,
+  files,
+  dayId,
+}: ComponentViewerProps) {
   const [showCode, setShowCode] = useState(false);
 
   return (
@@ -100,7 +122,7 @@ export function ComponentViewer({ component, files, dayId }: ComponentViewerProp
             <div className="p-6 border border-[var(--border)] rounded-sm bg-[var(--background)]">
               {component}
             </div>
-            
+
             <DayImage key={dayId} dayId={dayId} />
           </div>
         )}

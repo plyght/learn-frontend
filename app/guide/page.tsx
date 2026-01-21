@@ -20,49 +20,52 @@ export default function GuidePage() {
         </header>
 
         <article>
-          <div className="space-y-4 mb-12">
-            
-          
-          </div>
+          <div className="space-y-4 mb-12"></div>
 
           <section className="mb-12">
             <h2 className="text-xl font-mono font-semibold mb-6 tracking-tight">
               1. Decompose. Ruthlessly.
             </h2>
             <p className="mb-4 text-[var(--foreground)] leading-relaxed">
-              Before writing a single line of code, you need to understand the structure. 
-              If you can't name the parts, you can't code it. This step is non-negotiable.
+              Before writing a single line of code, you need to understand the
+              structure. If you can't name the parts, you can't code it. This
+              step is non-negotiable.
             </p>
 
             <h3 className="text-base font-mono font-semibold mb-3 mt-6 tracking-tight">
               Identify the Layout Pattern
             </h3>
             <p className="mb-4 text-[var(--foreground)] leading-relaxed">
-              Look at the screenshot and ask: Is this a column? A row? A grid? A combination?
+              Look at the screenshot and ask: Is this a column? A row? A grid? A
+              combination?
             </p>
             <ul className="list-none space-y-2 mb-6 ml-0">
               <li className="flex items-start">
                 <span className="mr-2 text-[var(--muted-foreground)]">•</span>
                 <span>
-                  <strong>Column</strong>: Elements stacked vertically (most common for mobile-first designs)
+                  <strong>Column</strong>: Elements stacked vertically (most
+                  common for mobile-first designs)
                 </span>
               </li>
               <li className="flex items-start">
                 <span className="mr-2 text-[var(--muted-foreground)]">•</span>
                 <span>
-                  <strong>Row</strong>: Elements side-by-side (headers, toolbars, cards in a row)
+                  <strong>Row</strong>: Elements side-by-side (headers,
+                  toolbars, cards in a row)
                 </span>
               </li>
               <li className="flex items-start">
                 <span className="mr-2 text-[var(--muted-foreground)]">•</span>
                 <span>
-                  <strong>Grid</strong>: Multiple items in rows and columns (dashboards, galleries)
+                  <strong>Grid</strong>: Multiple items in rows and columns
+                  (dashboards, galleries)
                 </span>
               </li>
               <li className="flex items-start">
                 <span className="mr-2 text-[var(--muted-foreground)]">•</span>
                 <span>
-                  <strong>Stack</strong>: Overlapping elements (modals, dropdowns, tooltips)
+                  <strong>Stack</strong>: Overlapping elements (modals,
+                  dropdowns, tooltips)
                 </span>
               </li>
             </ul>
@@ -71,11 +74,12 @@ export default function GuidePage() {
               Map the Component Hierarchy
             </h3>
             <p className="mb-4 text-[var(--foreground)] leading-relaxed">
-              Break down the UI into a tree structure. Start from the top level and drill down:
+              Break down the UI into a tree structure. Start from the top level
+              and drill down:
             </p>
             <pre className="bg-[var(--code-bg)] border border-[var(--border)] rounded-sm p-4 mb-4 overflow-x-auto text-xs font-mono">
               <code className="text-[var(--code-text)]">
-{`Page
+                {`Page
 ├── Header
 │   ├── Logo
 │   ├── Navigation
@@ -99,7 +103,8 @@ export default function GuidePage() {
               Find Repetition
             </h3>
             <p className="mb-4 text-[var(--foreground)] leading-relaxed">
-              Anything that appears more than once is a component. Don't code it multiple times—extract it.
+              Anything that appears more than once is a component. Don't code it
+              multiple times—extract it.
             </p>
             <p className="mb-4 text-[var(--foreground)] leading-relaxed">
               Look for:
@@ -123,36 +128,48 @@ export default function GuidePage() {
               Identify States
             </h3>
             <p className="mb-4 text-[var(--foreground)] leading-relaxed">
-              Every interactive element has states. If the screenshot shows one state, think about the others:
+              Every interactive element has states. If the screenshot shows one
+              state, think about the others:
             </p>
             <ul className="list-none space-y-2 mb-4 ml-0">
               <li className="flex items-start">
                 <span className="mr-2 text-[var(--muted-foreground)]">•</span>
-                <span><strong>Default</strong>: The base appearance</span>
+                <span>
+                  <strong>Default</strong>: The base appearance
+                </span>
               </li>
               <li className="flex items-start">
                 <span className="mr-2 text-[var(--muted-foreground)]">•</span>
-                <span><strong>Hover</strong>: What happens on mouse over</span>
+                <span>
+                  <strong>Hover</strong>: What happens on mouse over
+                </span>
               </li>
               <li className="flex items-start">
                 <span className="mr-2 text-[var(--muted-foreground)]">•</span>
-                <span><strong>Active/Focused</strong>: When clicked or selected</span>
+                <span>
+                  <strong>Active/Focused</strong>: When clicked or selected
+                </span>
               </li>
               <li className="flex items-start">
                 <span className="mr-2 text-[var(--muted-foreground)]">•</span>
-                <span><strong>Disabled</strong>: When not available</span>
+                <span>
+                  <strong>Disabled</strong>: When not available
+                </span>
               </li>
               <li className="flex items-start">
                 <span className="mr-2 text-[var(--muted-foreground)]">•</span>
-                <span><strong>Loading</strong>: While data is fetching</span>
+                <span>
+                  <strong>Loading</strong>: While data is fetching
+                </span>
               </li>
             </ul>
 
             <div className="bg-[var(--muted)] border border-[var(--border)] rounded-sm p-4 mt-6">
               <p className="text-sm text-[var(--foreground)] italic">
-                <strong>Pro tip:</strong> If it <em>looks</em> simple but feels hard to code, 
-                you missed decomposition. Go back and break it down further. Every complex UI 
-                is just simple parts arranged correctly.
+                <strong>Pro tip:</strong> If it <em>looks</em> simple but feels
+                hard to code, you missed decomposition. Go back and break it
+                down further. Every complex UI is just simple parts arranged
+                correctly.
               </p>
             </div>
           </section>
@@ -164,20 +181,22 @@ export default function GuidePage() {
               2. Ignore Colors and Fonts First
             </h2>
             <p className="mb-4 text-[var(--foreground)] leading-relaxed">
-              This is where 90% of beginners waste time. They see a beautiful gradient or 
-              a custom font and immediately try to match it. Don't. Structure comes first.
+              This is where 90% of beginners waste time. They see a beautiful
+              gradient or a custom font and immediately try to match it. Don't.
+              Structure comes first.
             </p>
 
             <h3 className="text-base font-mono font-semibold mb-3 mt-6 tracking-tight">
               Start with Boxes
             </h3>
             <p className="mb-4 text-[var(--foreground)] leading-relaxed">
-              Draw invisible boxes around every element. Every component is just a box. 
-              Understand the box model before you worry about what's inside.
+              Draw invisible boxes around every element. Every component is just
+              a box. Understand the box model before you worry about what's
+              inside.
             </p>
             <pre className="bg-[var(--code-bg)] border border-[var(--border)] rounded-sm p-4 mb-4 overflow-x-auto text-xs font-mono">
               <code className="text-[var(--code-text)]">
-{`// Start with this
+                {`// Start with this
 <div className="border border-gray-300">
   <div className="border border-gray-300">
     <div className="border border-gray-300">
@@ -194,15 +213,15 @@ export default function GuidePage() {
               Spacing is Everything
             </h3>
             <p className="mb-4 text-[var(--foreground)] leading-relaxed">
-              The space between elements is more important than the elements themselves. 
-              If spacing is wrong, the UI is wrong. Period.
+              The space between elements is more important than the elements
+              themselves. If spacing is wrong, the UI is wrong. Period.
             </p>
             <p className="mb-4 text-[var(--foreground)] leading-relaxed">
               Use placeholder colors to focus on structure:
             </p>
             <pre className="bg-[var(--code-bg)] border border-[var(--border)] rounded-sm p-4 mb-4 overflow-x-auto text-xs font-mono">
               <code className="text-[var(--code-text)]">
-{`// Brutal placeholders - no distractions
+                {`// Brutal placeholders - no distractions
 className="bg-gray-200 text-gray-800 font-system"
 className="bg-gray-300 text-gray-900 font-system"
 className="bg-gray-100 text-gray-700 font-system"
@@ -216,8 +235,9 @@ className="bg-gray-100 text-gray-700 font-system"
               Alignment and Proportions
             </h3>
             <p className="mb-4 text-[var(--foreground)] leading-relaxed">
-              Check alignment: Are elements left-aligned, centered, or right-aligned? 
-              What's the ratio between different sections? Is it 50/50, 30/70, or something else?
+              Check alignment: Are elements left-aligned, centered, or
+              right-aligned? What's the ratio between different sections? Is it
+              50/50, 30/70, or something else?
             </p>
             <p className="mb-4 text-[var(--foreground)] leading-relaxed">
               Common mistakes:
@@ -245,8 +265,9 @@ className="bg-gray-100 text-gray-700 font-system"
               3. Rebuild the Layout Skeleton
             </h2>
             <p className="mb-4 text-[var(--foreground)] leading-relaxed">
-              Modern CSS gives you everything you need with just a few properties. 
-              If you're reaching for complex solutions, you're probably overthinking it.
+              Modern CSS gives you everything you need with just a few
+              properties. If you're reaching for complex solutions, you're
+              probably overthinking it.
             </p>
 
             <h3 className="text-base font-mono font-semibold mb-3 mt-6 tracking-tight">
@@ -257,7 +278,7 @@ className="bg-gray-100 text-gray-700 font-system"
             </p>
             <pre className="bg-[var(--code-bg)] border border-[var(--border)] rounded-sm p-4 mb-4 overflow-x-auto text-xs font-mono">
               <code className="text-[var(--code-text)]">
-{`// Column (vertical stack)
+                {`// Column (vertical stack)
 <div className="flex flex-col gap-4">
   <div>Item 1</div>
   <div>Item 2</div>
@@ -292,7 +313,7 @@ className="bg-gray-100 text-gray-700 font-system"
             </p>
             <pre className="bg-[var(--code-bg)] border border-[var(--border)] rounded-sm p-4 mb-4 overflow-x-auto text-xs font-mono">
               <code className="text-[var(--code-text)]">
-{`// Simple grid
+                {`// Simple grid
 <div className="grid grid-cols-3 gap-4">
   <div>Item 1</div>
   <div>Item 2</div>
@@ -316,12 +337,19 @@ className="bg-gray-100 text-gray-700 font-system"
               Gap and Padding
             </h3>
             <p className="mb-4 text-[var(--foreground)] leading-relaxed">
-              Use <code className="bg-[var(--muted)] px-1.5 py-0.5 rounded-sm border border-[var(--border)] text-xs">gap</code> for space between flex/grid children. 
-              Use <code className="bg-[var(--muted)] px-1.5 py-0.5 rounded-sm border border-[var(--border)] text-xs">padding</code> for internal space.
+              Use{" "}
+              <code className="bg-[var(--muted)] px-1.5 py-0.5 rounded-sm border border-[var(--border)] text-xs">
+                gap
+              </code>{" "}
+              for space between flex/grid children. Use{" "}
+              <code className="bg-[var(--muted)] px-1.5 py-0.5 rounded-sm border border-[var(--border)] text-xs">
+                padding
+              </code>{" "}
+              for internal space.
             </p>
             <pre className="bg-[var(--code-bg)] border border-[var(--border)] rounded-sm p-4 mb-4 overflow-x-auto text-xs font-mono">
               <code className="text-[var(--code-text)]">
-{`// Gap = space between children
+                {`// Gap = space between children
 <div className="flex gap-4">
   <div>Item 1</div>
   <div>Item 2</div>
@@ -349,15 +377,23 @@ className="bg-gray-100 text-gray-700 font-system"
             <ul className="list-none space-y-2 mb-4 ml-0">
               <li className="flex items-start">
                 <span className="mr-2 text-[var(--muted-foreground)]">•</span>
-                <span><strong>Badges</strong>: Small indicators on top of other elements</span>
+                <span>
+                  <strong>Badges</strong>: Small indicators on top of other
+                  elements
+                </span>
               </li>
               <li className="flex items-start">
                 <span className="mr-2 text-[var(--muted-foreground)]">•</span>
-                <span><strong>Overlays</strong>: Modals, dropdowns, tooltips</span>
+                <span>
+                  <strong>Overlays</strong>: Modals, dropdowns, tooltips
+                </span>
               </li>
               <li className="flex items-start">
                 <span className="mr-2 text-[var(--muted-foreground)]">•</span>
-                <span><strong>Floating actions</strong>: Fixed buttons that stay in viewport</span>
+                <span>
+                  <strong>Floating actions</strong>: Fixed buttons that stay in
+                  viewport
+                </span>
               </li>
             </ul>
             <div className="bg-[var(--muted)] border border-[var(--border)] rounded-sm p-4 mt-4">
@@ -378,20 +414,20 @@ className="bg-gray-100 text-gray-700 font-system"
               4. Reverse-Engineer Spacing (The Secret)
             </h2>
             <p className="mb-4 text-[var(--foreground)] leading-relaxed">
-              Designers think in systems, even when they don't realize it. Most modern 
-              design systems use an 8px base unit. Learn to see it.
+              Designers think in systems, even when they don't realize it. Most
+              modern design systems use an 8px base unit. Learn to see it.
             </p>
 
             <h3 className="text-base font-mono font-semibold mb-3 mt-6 tracking-tight">
               The 8px System
             </h3>
             <p className="mb-4 text-[var(--foreground)] leading-relaxed">
-              Everything is a multiple of 4 or 8 pixels. This creates visual harmony 
-              and makes your code predictable.
+              Everything is a multiple of 4 or 8 pixels. This creates visual
+              harmony and makes your code predictable.
             </p>
             <pre className="bg-[var(--code-bg)] border border-[var(--border)] rounded-sm p-4 mb-4 overflow-x-auto text-xs font-mono">
               <code className="text-[var(--code-text)]">
-{`// Spacing scale (8px base)
+                {`// Spacing scale (8px base)
 4px   → 0.5 (tight, icons to text)
 8px   → 1   (tight, related items)
 12px  → 1.5 (normal, form fields)
@@ -408,25 +444,38 @@ className="bg-gray-100 text-gray-700 font-system"
               How to Measure
             </h3>
             <p className="mb-4 text-[var(--foreground)] leading-relaxed">
-              Use browser dev tools or a design tool to measure distances. Then round 
-              to the nearest token. Never use random numbers like 13px or 47px.
+              Use browser dev tools or a design tool to measure distances. Then
+              round to the nearest token. Never use random numbers like 13px or
+              47px.
             </p>
             <ul className="list-none space-y-2 mb-4 ml-0">
               <li className="flex items-start">
                 <span className="mr-2 text-[var(--muted-foreground)]">•</span>
-                <span><strong>Tight spacing</strong> (4px, 8px): Icons next to text, badges, tags</span>
+                <span>
+                  <strong>Tight spacing</strong> (4px, 8px): Icons next to text,
+                  badges, tags
+                </span>
               </li>
               <li className="flex items-start">
                 <span className="mr-2 text-[var(--muted-foreground)]">•</span>
-                <span><strong>Normal spacing</strong> (12px, 16px): Between form fields, card padding, list items</span>
+                <span>
+                  <strong>Normal spacing</strong> (12px, 16px): Between form
+                  fields, card padding, list items
+                </span>
               </li>
               <li className="flex items-start">
                 <span className="mr-2 text-[var(--muted-foreground)]">•</span>
-                <span><strong>Section spacing</strong> (24px, 32px): Between major sections, headers and content</span>
+                <span>
+                  <strong>Section spacing</strong> (24px, 32px): Between major
+                  sections, headers and content
+                </span>
               </li>
               <li className="flex items-start">
                 <span className="mr-2 text-[var(--muted-foreground)]">•</span>
-                <span><strong>Page spacing</strong> (48px, 64px): Between page sections, hero spacing</span>
+                <span>
+                  <strong>Page spacing</strong> (48px, 64px): Between page
+                  sections, hero spacing
+                </span>
               </li>
             </ul>
 
@@ -434,13 +483,13 @@ className="bg-gray-100 text-gray-700 font-system"
               Practical Example
             </h3>
             <p className="mb-4 text-[var(--foreground)] leading-relaxed">
-              You measure the gap between two cards: it's 18px. Don't use 18px. 
-              Round to 16px (closest token). If it feels too tight, use 24px. 
+              You measure the gap between two cards: it's 18px. Don't use 18px.
+              Round to 16px (closest token). If it feels too tight, use 24px.
               The system is more important than exact pixels.
             </p>
             <pre className="bg-[var(--code-bg)] border border-[var(--border)] rounded-sm p-4 mb-4 overflow-x-auto text-xs font-mono">
               <code className="text-[var(--code-text)]">
-{`// ❌ Bad: Random numbers
+                {`// ❌ Bad: Random numbers
 <div className="flex gap-[18px] p-[13px]">
 
 // ✅ Good: System tokens
@@ -458,8 +507,9 @@ className="bg-gray-100 text-gray-700 font-system"
               5. Typography is Hierarchy, Not Font Choice
             </h2>
             <p className="mb-4 text-[var(--foreground)] leading-relaxed">
-              You don't need the exact font to nail the UI. You need the right hierarchy. 
-              A system font with correct sizing will look 90% as good as a custom font.
+              You don't need the exact font to nail the UI. You need the right
+              hierarchy. A system font with correct sizing will look 90% as good
+              as a custom font.
             </p>
 
             <h3 className="text-base font-mono font-semibold mb-3 mt-6 tracking-tight">
@@ -469,22 +519,22 @@ className="bg-gray-100 text-gray-700 font-system"
               <li className="flex items-start">
                 <span className="mr-2 text-[var(--muted-foreground)]">1.</span>
                 <div>
-                  <strong>Size ratio</strong>: How much bigger is the heading than the body? 
-                  1.5x? 2x? 3x? This creates visual hierarchy.
+                  <strong>Size ratio</strong>: How much bigger is the heading
+                  than the body? 1.5x? 2x? 3x? This creates visual hierarchy.
                 </div>
               </li>
               <li className="flex items-start">
                 <span className="mr-2 text-[var(--muted-foreground)]">2.</span>
                 <div>
-                  <strong>Weight</strong>: Regular (400), medium (500), semibold (600), bold (700). 
-                  Heavier = more important.
+                  <strong>Weight</strong>: Regular (400), medium (500), semibold
+                  (600), bold (700). Heavier = more important.
                 </div>
               </li>
               <li className="flex items-start">
                 <span className="mr-2 text-[var(--muted-foreground)]">3.</span>
                 <div>
-                  <strong>Line height</strong>: Usually 1.5 for body, 1.2-1.3 for headings. 
-                  Tighter = more compact, looser = more readable.
+                  <strong>Line height</strong>: Usually 1.5 for body, 1.2-1.3
+                  for headings. Tighter = more compact, looser = more readable.
                 </div>
               </li>
             </ul>
@@ -494,7 +544,7 @@ className="bg-gray-100 text-gray-700 font-system"
             </h3>
             <pre className="bg-[var(--code-bg)] border border-[var(--border)] rounded-sm p-4 mb-4 overflow-x-auto text-xs font-mono">
               <code className="text-[var(--code-text)]">
-{`// Hero/Page Title
+                {`// Hero/Page Title
 className="text-3xl md:text-4xl font-bold leading-tight"
 
 // Section Heading
@@ -518,15 +568,16 @@ className="text-xs opacity-60 leading-normal"`}
               The Black & White Test
             </h3>
             <p className="mb-4 text-[var(--foreground)] leading-relaxed">
-              Convert your recreation to grayscale. If the hierarchy is still clear—if you 
-              can tell what's important just from size and weight—you've nailed typography. 
-              If everything looks the same, your sizes or weights are too similar.
+              Convert your recreation to grayscale. If the hierarchy is still
+              clear—if you can tell what's important just from size and
+              weight—you've nailed typography. If everything looks the same,
+              your sizes or weights are too similar.
             </p>
             <div className="bg-[var(--muted)] border border-[var(--border)] rounded-sm p-4 mt-4">
               <p className="text-sm text-[var(--foreground)]">
-                <strong>Pro tip:</strong> Start with system fonts (system-ui, -apple-system). 
-                Get the hierarchy right first. Then, if needed, swap in the custom font. 
-                The hierarchy will transfer.
+                <strong>Pro tip:</strong> Start with system fonts (system-ui,
+                -apple-system). Get the hierarchy right first. Then, if needed,
+                swap in the custom font. The hierarchy will transfer.
               </p>
             </div>
           </section>
@@ -538,16 +589,16 @@ className="text-xs opacity-60 leading-normal"`}
               6. Only Now Add Polish
             </h2>
             <p className="mb-4 text-[var(--foreground)] leading-relaxed">
-              Structure is done. Spacing is correct. Typography works. Now you can add the 
-              visual details that make it beautiful.
+              Structure is done. Spacing is correct. Typography works. Now you
+              can add the visual details that make it beautiful.
             </p>
 
             <h3 className="text-base font-mono font-semibold mb-3 mt-6 tracking-tight">
               Colors
             </h3>
             <p className="mb-4 text-[var(--foreground)] leading-relaxed">
-              Extract colors from the screenshot. Use a color picker tool. But remember: 
-              if the structure is wrong, perfect colors won't save it.
+              Extract colors from the screenshot. Use a color picker tool. But
+              remember: if the structure is wrong, perfect colors won't save it.
             </p>
             <p className="mb-4 text-[var(--foreground)] leading-relaxed">
               Common color roles:
@@ -555,19 +606,28 @@ className="text-xs opacity-60 leading-normal"`}
             <ul className="list-none space-y-2 mb-4 ml-0">
               <li className="flex items-start">
                 <span className="mr-2 text-[var(--muted-foreground)]">•</span>
-                <span><strong>Primary</strong>: Main brand color, CTAs, links</span>
+                <span>
+                  <strong>Primary</strong>: Main brand color, CTAs, links
+                </span>
               </li>
               <li className="flex items-start">
                 <span className="mr-2 text-[var(--muted-foreground)]">•</span>
-                <span><strong>Background</strong>: Page, card, surface colors</span>
+                <span>
+                  <strong>Background</strong>: Page, card, surface colors
+                </span>
               </li>
               <li className="flex items-start">
                 <span className="mr-2 text-[var(--muted-foreground)]">•</span>
-                <span><strong>Text</strong>: Primary text, secondary text, muted text</span>
+                <span>
+                  <strong>Text</strong>: Primary text, secondary text, muted
+                  text
+                </span>
               </li>
               <li className="flex items-start">
                 <span className="mr-2 text-[var(--muted-foreground)]">•</span>
-                <span><strong>Border</strong>: Dividers, outlines, subtle separators</span>
+                <span>
+                  <strong>Border</strong>: Dividers, outlines, subtle separators
+                </span>
               </li>
             </ul>
 
@@ -579,7 +639,7 @@ className="text-xs opacity-60 leading-normal"`}
             </p>
             <pre className="bg-[var(--code-bg)] border border-[var(--border)] rounded-sm p-4 mb-4 overflow-x-auto text-xs font-mono">
               <code className="text-[var(--code-text)]">
-{`// Small elements (buttons, badges)
+                {`// Small elements (buttons, badges)
 rounded-sm  // 2px
 rounded     // 4px
 
@@ -597,8 +657,8 @@ rounded-2xl // 16px`}
               Shadows
             </h3>
             <p className="mb-4 text-[var(--foreground)] leading-relaxed">
-              Shadows are <strong>subtle or nonexistent</strong> in modern UI. If you notice 
-              the shadow, it's too much. Most modern designs use:
+              Shadows are <strong>subtle or nonexistent</strong> in modern UI.
+              If you notice the shadow, it's too much. Most modern designs use:
             </p>
             <ul className="list-none space-y-2 mb-4 ml-0">
               <li className="flex items-start">
@@ -616,7 +676,7 @@ rounded-2xl // 16px`}
             </ul>
             <pre className="bg-[var(--code-bg)] border border-[var(--border)] rounded-sm p-4 mb-4 overflow-x-auto text-xs font-mono">
               <code className="text-[var(--code-text)]">
-{`// ❌ Too much
+                {`// ❌ Too much
 shadow-lg
 shadow-xl
 
@@ -631,8 +691,8 @@ border border-gray-200`}
               Gradients and Effects
             </h3>
             <p className="mb-4 text-[var(--foreground)] leading-relaxed">
-              Use sparingly. Most modern UIs are flat. Gradients are usually reserved for 
-              hero sections or special CTAs. Don't overdo it.
+              Use sparingly. Most modern UIs are flat. Gradients are usually
+              reserved for hero sections or special CTAs. Don't overdo it.
             </p>
           </section>
 
@@ -643,37 +703,48 @@ border border-gray-200`}
               7. Compare Brutally
             </h2>
             <p className="mb-4 text-[var(--foreground)] leading-relaxed">
-              You're done coding. Now you need to verify. This step separates good recreations 
-              from great ones.
+              You're done coding. Now you need to verify. This step separates
+              good recreations from great ones.
             </p>
 
             <h3 className="text-base font-mono font-semibold mb-3 mt-6 tracking-tight">
               Side-by-Side Comparison
             </h3>
             <p className="mb-4 text-[var(--foreground)] leading-relaxed">
-              Put the original screenshot next to your recreation. Use a split-screen view. 
-              Compare systematically:
+              Put the original screenshot next to your recreation. Use a
+              split-screen view. Compare systematically:
             </p>
             <ul className="list-none space-y-2 mb-4 ml-0">
               <li className="flex items-start">
                 <span className="mr-2 text-[var(--muted-foreground)]">•</span>
-                <span><strong>Spacing</strong>: Does the gap between elements match?</span>
+                <span>
+                  <strong>Spacing</strong>: Does the gap between elements match?
+                </span>
               </li>
               <li className="flex items-start">
                 <span className="mr-2 text-[var(--muted-foreground)]">•</span>
-                <span><strong>Density</strong>: Does it feel as heavy or light?</span>
+                <span>
+                  <strong>Density</strong>: Does it feel as heavy or light?
+                </span>
               </li>
               <li className="flex items-start">
                 <span className="mr-2 text-[var(--muted-foreground)]">•</span>
-                <span><strong>Alignment</strong>: Are elements aligned the same way?</span>
+                <span>
+                  <strong>Alignment</strong>: Are elements aligned the same way?
+                </span>
               </li>
               <li className="flex items-start">
                 <span className="mr-2 text-[var(--muted-foreground)]">•</span>
-                <span><strong>Proportions</strong>: Are widths and heights in the same ratio?</span>
+                <span>
+                  <strong>Proportions</strong>: Are widths and heights in the
+                  same ratio?
+                </span>
               </li>
               <li className="flex items-start">
                 <span className="mr-2 text-[var(--muted-foreground)]">•</span>
-                <span><strong>Typography</strong>: Does the text hierarchy match?</span>
+                <span>
+                  <strong>Typography</strong>: Does the text hierarchy match?
+                </span>
               </li>
             </ul>
 
@@ -681,12 +752,21 @@ border border-gray-200`}
               The "Feels Off" Test
             </h3>
             <p className="mb-4 text-[var(--foreground)] leading-relaxed">
-              If your version feels "off" but you can't pinpoint why, it's almost always:
+              If your version feels "off" but you can't pinpoint why, it's
+              almost always:
             </p>
             <ol className="list-decimal space-y-2 mb-4 ml-6">
-              <li><strong>Spacing is wrong</strong> (most common)</li>
-              <li><strong>Typography hierarchy is off</strong> (sizes or weights too similar/different)</li>
-              <li><strong>Alignment is inconsistent</strong> (things aren't lining up)</li>
+              <li>
+                <strong>Spacing is wrong</strong> (most common)
+              </li>
+              <li>
+                <strong>Typography hierarchy is off</strong> (sizes or weights
+                too similar/different)
+              </li>
+              <li>
+                <strong>Alignment is inconsistent</strong> (things aren't lining
+                up)
+              </li>
             </ol>
 
             <h3 className="text-base font-mono font-semibold mb-3 mt-6 tracking-tight">
@@ -721,23 +801,33 @@ border border-gray-200`}
                 </h3>
                 <ul className="list-none space-y-2 ml-0">
                   <li className="flex items-start">
-                    <span className="mr-2 text-[var(--muted-foreground)]">•</span>
+                    <span className="mr-2 text-[var(--muted-foreground)]">
+                      •
+                    </span>
                     <span>Match exact pixels (13px, 47px, etc.)</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="mr-2 text-[var(--muted-foreground)]">•</span>
+                    <span className="mr-2 text-[var(--muted-foreground)]">
+                      •
+                    </span>
                     <span>Use absolute positioning for layout</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="mr-2 text-[var(--muted-foreground)]">•</span>
+                    <span className="mr-2 text-[var(--muted-foreground)]">
+                      •
+                    </span>
                     <span>Spend hours finding the perfect font</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="mr-2 text-[var(--muted-foreground)]">•</span>
+                    <span className="mr-2 text-[var(--muted-foreground)]">
+                      •
+                    </span>
                     <span>Code before understanding structure</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="mr-2 text-[var(--muted-foreground)]">•</span>
+                    <span className="mr-2 text-[var(--muted-foreground)]">
+                      •
+                    </span>
                     <span>Use random spacing values</span>
                   </li>
                 </ul>
@@ -748,23 +838,33 @@ border border-gray-200`}
                 </h3>
                 <ul className="list-none space-y-2 ml-0">
                   <li className="flex items-start">
-                    <span className="mr-2 text-[var(--muted-foreground)]">•</span>
+                    <span className="mr-2 text-[var(--muted-foreground)]">
+                      •
+                    </span>
                     <span>Use system tokens (4px, 8px, 16px, etc.)</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="mr-2 text-[var(--muted-foreground)]">•</span>
+                    <span className="mr-2 text-[var(--muted-foreground)]">
+                      •
+                    </span>
                     <span>Use flex/grid for all layouts</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="mr-2 text-[var(--muted-foreground)]">•</span>
+                    <span className="mr-2 text-[var(--muted-foreground)]">
+                      •
+                    </span>
                     <span>Focus on hierarchy, not font choice</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="mr-2 text-[var(--muted-foreground)]">•</span>
+                    <span className="mr-2 text-[var(--muted-foreground)]">
+                      •
+                    </span>
                     <span>Decompose first, code second</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="mr-2 text-[var(--muted-foreground)]">•</span>
+                    <span className="mr-2 text-[var(--muted-foreground)]">
+                      •
+                    </span>
                     <span>Build structure before polish</span>
                   </li>
                 </ul>
@@ -785,11 +885,12 @@ border border-gray-200`}
                   Mistake: Starting with colors and fonts
                 </h3>
                 <p className="text-sm text-[var(--foreground)] mb-2">
-                  You see a beautiful gradient and immediately try to recreate it. 
-                  Two hours later, you realize the layout is broken.
+                  You see a beautiful gradient and immediately try to recreate
+                  it. Two hours later, you realize the layout is broken.
                 </p>
                 <p className="text-sm text-[var(--muted-foreground)]">
-                  <strong>Fix:</strong> Structure first. Use gray placeholders. Add colors last.
+                  <strong>Fix:</strong> Structure first. Use gray placeholders.
+                  Add colors last.
                 </p>
               </div>
 
@@ -798,11 +899,19 @@ border border-gray-200`}
                   Mistake: Using absolute positioning for layout
                 </h3>
                 <p className="text-sm text-[var(--foreground)] mb-2">
-                  You position everything with <code className="bg-[var(--muted)] px-1 py-0.5 rounded text-xs">top</code> and <code className="bg-[var(--muted)] px-1 py-0.5 rounded text-xs">left</code>. 
-                  It works on your screen but breaks everywhere else.
+                  You position everything with{" "}
+                  <code className="bg-[var(--muted)] px-1 py-0.5 rounded text-xs">
+                    top
+                  </code>{" "}
+                  and{" "}
+                  <code className="bg-[var(--muted)] px-1 py-0.5 rounded text-xs">
+                    left
+                  </code>
+                  . It works on your screen but breaks everywhere else.
                 </p>
                 <p className="text-sm text-[var(--muted-foreground)]">
-                  <strong>Fix:</strong> Use flex or grid. They're responsive by default.
+                  <strong>Fix:</strong> Use flex or grid. They're responsive by
+                  default.
                 </p>
               </div>
 
@@ -811,11 +920,12 @@ border border-gray-200`}
                   Mistake: Not seeing the spacing system
                 </h3>
                 <p className="text-sm text-[var(--foreground)] mb-2">
-                  You measure 18px and use 18px. Then 23px. Then 31px. Your spacing 
-                  looks random and unprofessional.
+                  You measure 18px and use 18px. Then 23px. Then 31px. Your
+                  spacing looks random and unprofessional.
                 </p>
                 <p className="text-sm text-[var(--muted-foreground)]">
-                  <strong>Fix:</strong> Round to the nearest 4px or 8px token. Use a system.
+                  <strong>Fix:</strong> Round to the nearest 4px or 8px token.
+                  Use a system.
                 </p>
               </div>
 
@@ -824,12 +934,12 @@ border border-gray-200`}
                   Mistake: Coding before thinking
                 </h3>
                 <p className="text-sm text-[var(--foreground)] mb-2">
-                  You start coding immediately. Halfway through, you realize you need 
-                  to restructure everything.
+                  You start coding immediately. Halfway through, you realize you
+                  need to restructure everything.
                 </p>
                 <p className="text-sm text-[var(--muted-foreground)]">
-                  <strong>Fix:</strong> Spend 10 minutes decomposing first. Draw boxes. 
-                  Map the hierarchy. Then code.
+                  <strong>Fix:</strong> Spend 10 minutes decomposing first. Draw
+                  boxes. Map the hierarchy. Then code.
                 </p>
               </div>
             </div>
@@ -842,8 +952,8 @@ border border-gray-200`}
               Practice Exercise: 15-Minute Daily Drill
             </h2>
             <p className="mb-4 text-[var(--foreground)] leading-relaxed">
-              Do this every day until it becomes automatic. Pick a simple UI component 
-              from Dribbble, Behance, or any design site.
+              Do this every day until it becomes automatic. Pick a simple UI
+              component from Dribbble, Behance, or any design site.
             </p>
 
             <div className="space-y-4 mb-6">
@@ -852,7 +962,8 @@ border border-gray-200`}
                   Minute 0-2: Decompose
                 </h3>
                 <p className="text-sm text-[var(--foreground)]">
-                  Write down: layout pattern, component hierarchy, repeated elements, states.
+                  Write down: layout pattern, component hierarchy, repeated
+                  elements, states.
                 </p>
               </div>
 
@@ -861,8 +972,8 @@ border border-gray-200`}
                   Minute 2-8: Build Structure
                 </h3>
                 <p className="text-sm text-[var(--foreground)]">
-                  Code the layout skeleton with flex/grid. Use gray placeholders. 
-                  Focus only on boxes and spacing.
+                  Code the layout skeleton with flex/grid. Use gray
+                  placeholders. Focus only on boxes and spacing.
                 </p>
               </div>
 
@@ -871,8 +982,8 @@ border border-gray-200`}
                   Minute 8-12: Add Typography
                 </h3>
                 <p className="text-sm text-[var(--foreground)]">
-                  Add text with correct hierarchy. Use system fonts. Get sizes and 
-                  weights right.
+                  Add text with correct hierarchy. Use system fonts. Get sizes
+                  and weights right.
                 </p>
               </div>
 
@@ -881,15 +992,17 @@ border border-gray-200`}
                   Minute 12-15: Polish
                 </h3>
                 <p className="text-sm text-[var(--foreground)]">
-                  Add colors, borders, subtle shadows. Compare side-by-side with original.
+                  Add colors, borders, subtle shadows. Compare side-by-side with
+                  original.
                 </p>
               </div>
             </div>
 
             <div className="bg-[var(--muted)] border border-[var(--border)] rounded-sm p-4">
               <p className="text-sm text-[var(--foreground)]">
-                <strong>Goal:</strong> After 2 weeks, you should be able to recreate 
-                simple UIs in 15 minutes without thinking. The process becomes automatic.
+                <strong>Goal:</strong> After 2 weeks, you should be able to
+                recreate simple UIs in 15 minutes without thinking. The process
+                becomes automatic.
               </p>
             </div>
           </section>
@@ -901,22 +1014,24 @@ border border-gray-200`}
               Hard Truth
             </h2>
             <p className="mb-4 text-[var(--foreground)] leading-relaxed">
-              Most people fail at UI recreation because they <strong>code too early</strong> and{" "}
+              Most people fail at UI recreation because they{" "}
+              <strong>code too early</strong> and{" "}
               <strong>think too little</strong>.
             </p>
             <p className="mb-4 text-[var(--foreground)] leading-relaxed">
-              UI is logic before it's CSS. The structure, the relationships, the hierarchy—these 
-              are all logical problems. CSS is just the tool to express the solution.
+              UI is logic before it's CSS. The structure, the relationships, the
+              hierarchy—these are all logical problems. CSS is just the tool to
+              express the solution.
             </p>
             <p className="mb-4 text-[var(--foreground)] leading-relaxed">
-              If you spend 80% of your time thinking and 20% coding, you'll create better UIs 
-              faster than someone who does the opposite.
+              If you spend 80% of your time thinking and 20% coding, you'll
+              create better UIs faster than someone who does the opposite.
             </p>
             <div className="bg-[var(--muted)] border border-[var(--border)] rounded-sm p-4 mt-6">
               <p className="text-sm text-[var(--foreground)]">
-                <strong>Remember:</strong> Perfect pixels don't matter if the structure is wrong. 
-                A beautiful gradient won't save a broken layout. Focus on systems, not details. 
-                Details come last.
+                <strong>Remember:</strong> Perfect pixels don't matter if the
+                structure is wrong. A beautiful gradient won't save a broken
+                layout. Focus on systems, not details. Details come last.
               </p>
             </div>
           </section>

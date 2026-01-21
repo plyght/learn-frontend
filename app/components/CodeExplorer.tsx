@@ -43,7 +43,10 @@ export function CodeExplorer({ files }: CodeExplorerProps) {
   useEffect(() => {
     const checkTheme = () => {
       const theme = document.documentElement.getAttribute("data-theme");
-      setIsDark(theme === "dark" || (!theme && window.matchMedia("(prefers-color-scheme: dark)").matches));
+      setIsDark(
+        theme === "dark" ||
+          (!theme && window.matchMedia("(prefers-color-scheme: dark)").matches),
+      );
     };
 
     checkTheme();
@@ -97,7 +100,9 @@ export function CodeExplorer({ files }: CodeExplorerProps) {
 
   if (!currentFile) {
     return (
-      <div className="p-6 text-center text-xs text-[var(--muted-foreground)]">no files to display</div>
+      <div className="p-6 text-center text-xs text-[var(--muted-foreground)]">
+        no files to display
+      </div>
     );
   }
 
@@ -111,12 +116,16 @@ export function CodeExplorer({ files }: CodeExplorerProps) {
         onFileSelect={setSelectedFile}
       />
       <div className="flex items-center justify-between px-4 py-2 border-b border-[var(--border)] bg-[var(--code-header-bg)]">
-        <span className="text-xs font-mono text-[var(--code-text)]">{selectedFile}</span>
+        <span className="text-xs font-mono text-[var(--code-text)]">
+          {selectedFile}
+        </span>
         <CopyButton content={currentFile.content} />
       </div>
       <div className="flex-1 overflow-auto relative">
         {isLoading ? (
-          <div className="p-6 text-center text-xs text-[var(--code-text)]">loading...</div>
+          <div className="p-6 text-center text-xs text-[var(--code-text)]">
+            loading...
+          </div>
         ) : (
           <div className="relative">
             <div className="absolute left-0 top-0 w-12 bg-[var(--code-line-number-bg)] border-r border-[var(--border)] text-right pr-3 pl-2 text-xs text-[var(--code-line-number)] select-none py-4">

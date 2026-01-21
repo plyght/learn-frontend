@@ -32,25 +32,28 @@ export default function ConcentricRoundingPage() {
               The Rule
             </h2>
             <p className="mb-4 text-[var(--foreground)] leading-relaxed">
-              When you have nested rounded elements, the outer radius should equal 
-              the gap (padding/margin) between containers plus the inner radius. 
-              This creates visual harmony and prevents awkward gaps or overlaps.
+              When you have nested rounded elements, the outer radius should
+              equal the gap (padding/margin) between containers plus the inner
+              radius. This creates visual harmony and prevents awkward gaps or
+              overlaps.
             </p>
             <div className="bg-[var(--muted)] border border-[var(--border)] rounded-sm p-6 mb-6">
               <p className="text-lg font-mono font-semibold mb-2">
                 outer radius = gap + inner radius
               </p>
               <p className="text-sm text-[var(--muted-foreground)] mb-2">
-                Or rearranged: <strong>inner radius = outer radius - gap</strong>
+                Or rearranged:{" "}
+                <strong>inner radius = outer radius - gap</strong>
               </p>
               <p className="text-xs text-[var(--muted-foreground)]">
-                Where "gap" is the padding/margin between the outer and inner containers
+                Where "gap" is the padding/margin between the outer and inner
+                containers
               </p>
             </div>
             <p className="mb-4 text-[var(--foreground)] leading-relaxed">
-              This rule ensures that nested rounded corners align perfectly, creating 
-              a cohesive, polished look. When done correctly, the inner element's corners 
-              will smoothly follow the outer element's curve.
+              This rule ensures that nested rounded corners align perfectly,
+              creating a cohesive, polished look. When done correctly, the inner
+              element's corners will smoothly follow the outer element's curve.
             </p>
           </section>
 
@@ -96,23 +99,24 @@ export default function ConcentricRoundingPage() {
                 </div>
               </div>
 
-              <div 
+              <div
                 className="rounded-lg"
-                style={{ 
+                style={{
                   borderRadius: `${outerRadius}px`,
                   padding: `${gap}px`,
-                  backgroundColor: '#3b82f6'
+                  backgroundColor: "#3b82f6",
                 }}
               >
-                <div 
+                <div
                   className="rounded-lg p-4"
-                  style={{ 
+                  style={{
                     borderRadius: `${innerRadius}px`,
-                    backgroundColor: '#1e40af'
+                    backgroundColor: "#1e40af",
                   }}
                 >
                   <p className="text-sm text-white">
-                    Inner element with calculated radius: <strong>{innerRadius}px</strong>
+                    Inner element with calculated radius:{" "}
+                    <strong>{innerRadius}px</strong>
                   </p>
                   <p className="text-xs text-blue-200 mt-2">
                     Formula: {outerRadius}px - {gap}px = {innerRadius}px
@@ -123,7 +127,7 @@ export default function ConcentricRoundingPage() {
 
             <div className="bg-[var(--code-bg)] border border-[var(--border)] rounded-sm p-4 mb-4 overflow-x-auto text-xs font-mono">
               <code className="text-[var(--code-text)]">
-{`// Outer container with gap (padding/margin)
+                {`// Outer container with gap (padding/margin)
 <div 
   className="rounded-lg"
   style={{ 
@@ -153,8 +157,8 @@ export default function ConcentricRoundingPage() {
               Why This Matters
             </h2>
             <p className="mb-4 text-[var(--foreground)] leading-relaxed">
-              When nested rounded elements don't follow this rule, you get visual 
-              inconsistencies that make the UI feel unpolished:
+              When nested rounded elements don't follow this rule, you get
+              visual inconsistencies that make the UI feel unpolished:
             </p>
 
             <div className="grid md:grid-cols-2 gap-4 mb-6">
@@ -162,19 +166,19 @@ export default function ConcentricRoundingPage() {
                 <h3 className="text-sm font-mono font-semibold mb-2 text-red-500">
                   ❌ Wrong
                 </h3>
-                <div 
+                <div
                   className="rounded-lg"
-                  style={{ 
-                    borderRadius: '16px', 
-                    padding: '12px',
-                    backgroundColor: '#ef4444'
+                  style={{
+                    borderRadius: "16px",
+                    padding: "12px",
+                    backgroundColor: "#ef4444",
                   }}
                 >
-                  <div 
+                  <div
                     className="rounded-lg p-2"
-                    style={{ 
-                      borderRadius: '12px',
-                      backgroundColor: '#dc2626'
+                    style={{
+                      borderRadius: "12px",
+                      backgroundColor: "#dc2626",
                     }}
                   >
                     <p className="text-xs text-white">Inner radius too large</p>
@@ -189,19 +193,19 @@ export default function ConcentricRoundingPage() {
                 <h3 className="text-sm font-mono font-semibold mb-2 text-green-500">
                   ✅ Correct
                 </h3>
-                <div 
+                <div
                   className="rounded-lg"
-                  style={{ 
-                    borderRadius: '16px', 
-                    padding: '8px',
-                    backgroundColor: '#10b981'
+                  style={{
+                    borderRadius: "16px",
+                    padding: "8px",
+                    backgroundColor: "#10b981",
                   }}
                 >
-                  <div 
+                  <div
                     className="rounded-lg p-2"
-                    style={{ 
-                      borderRadius: '8px',
-                      backgroundColor: '#059669'
+                    style={{
+                      borderRadius: "8px",
+                      backgroundColor: "#059669",
                     }}
                   >
                     <p className="text-xs text-white">16px - 8px = 8px</p>
@@ -227,10 +231,18 @@ export default function ConcentricRoundingPage() {
               <table className="w-full text-sm border-collapse">
                 <thead>
                   <tr className="border-b border-[var(--border)]">
-                    <th className="text-left p-3 font-mono font-semibold">Outer Radius</th>
-                    <th className="text-left p-3 font-mono font-semibold">Gap</th>
-                    <th className="text-left p-3 font-mono font-semibold">Inner Radius</th>
-                    <th className="text-left p-3 font-mono font-semibold">Use Case</th>
+                    <th className="text-left p-3 font-mono font-semibold">
+                      Outer Radius
+                    </th>
+                    <th className="text-left p-3 font-mono font-semibold">
+                      Gap
+                    </th>
+                    <th className="text-left p-3 font-mono font-semibold">
+                      Inner Radius
+                    </th>
+                    <th className="text-left p-3 font-mono font-semibold">
+                      Use Case
+                    </th>
                   </tr>
                 </thead>
                 <tbody>
@@ -238,31 +250,41 @@ export default function ConcentricRoundingPage() {
                     <td className="p-3 font-mono">8px</td>
                     <td className="p-3 font-mono">4px</td>
                     <td className="p-3 font-mono">4px</td>
-                    <td className="p-3 text-[var(--muted-foreground)]">Small buttons, badges</td>
+                    <td className="p-3 text-[var(--muted-foreground)]">
+                      Small buttons, badges
+                    </td>
                   </tr>
                   <tr className="border-b border-[var(--border)]">
                     <td className="p-3 font-mono">12px</td>
                     <td className="p-3 font-mono">8px</td>
                     <td className="p-3 font-mono">4px</td>
-                    <td className="p-3 text-[var(--muted-foreground)]">Cards, inputs</td>
+                    <td className="p-3 text-[var(--muted-foreground)]">
+                      Cards, inputs
+                    </td>
                   </tr>
                   <tr className="border-b border-[var(--border)]">
                     <td className="p-3 font-mono">16px</td>
                     <td className="p-3 font-mono">12px</td>
                     <td className="p-3 font-mono">4px</td>
-                    <td className="p-3 text-[var(--muted-foreground)]">Large cards, containers</td>
+                    <td className="p-3 text-[var(--muted-foreground)]">
+                      Large cards, containers
+                    </td>
                   </tr>
                   <tr className="border-b border-[var(--border)]">
                     <td className="p-3 font-mono">16px</td>
                     <td className="p-3 font-mono">8px</td>
                     <td className="p-3 font-mono">8px</td>
-                    <td className="p-3 text-[var(--muted-foreground)]">Modals, dialogs</td>
+                    <td className="p-3 text-[var(--muted-foreground)]">
+                      Modals, dialogs
+                    </td>
                   </tr>
                   <tr className="border-b border-[var(--border)]">
                     <td className="p-3 font-mono">24px</td>
                     <td className="p-3 font-mono">16px</td>
                     <td className="p-3 font-mono">8px</td>
-                    <td className="p-3 text-[var(--muted-foreground)]">Hero sections, large modals</td>
+                    <td className="p-3 text-[var(--muted-foreground)]">
+                      Hero sections, large modals
+                    </td>
                   </tr>
                 </tbody>
               </table>
@@ -279,22 +301,41 @@ export default function ConcentricRoundingPage() {
               <li className="flex items-start">
                 <span className="mr-3 text-[var(--muted-foreground)]">1.</span>
                 <div>
-                  <strong className="block mb-1">Use CSS variables or a design system</strong>
+                  <strong className="block mb-1">
+                    Use CSS variables or a design system
+                  </strong>
                   <p className="text-sm text-[var(--muted-foreground)]">
-                    Define your radius values as tokens so you can easily maintain the relationship. 
-                    For example: <code className="bg-[var(--muted)] px-1 py-0.5 rounded text-xs">--radius-sm: 4px</code>, 
-                    <code className="bg-[var(--muted)] px-1 py-0.5 rounded text-xs"> --radius-md: 8px</code>, 
-                    <code className="bg-[var(--muted)] px-1 py-0.5 rounded text-xs"> --radius-lg: 12px</code>
+                    Define your radius values as tokens so you can easily
+                    maintain the relationship. For example:{" "}
+                    <code className="bg-[var(--muted)] px-1 py-0.5 rounded text-xs">
+                      --radius-sm: 4px
+                    </code>
+                    ,
+                    <code className="bg-[var(--muted)] px-1 py-0.5 rounded text-xs">
+                      {" "}
+                      --radius-md: 8px
+                    </code>
+                    ,
+                    <code className="bg-[var(--muted)] px-1 py-0.5 rounded text-xs">
+                      {" "}
+                      --radius-lg: 12px
+                    </code>
                   </p>
                 </div>
               </li>
               <li className="flex items-start">
                 <span className="mr-3 text-[var(--muted-foreground)]">2.</span>
                 <div>
-                  <strong className="block mb-1">Calculate dynamically when needed</strong>
+                  <strong className="block mb-1">
+                    Calculate dynamically when needed
+                  </strong>
                   <p className="text-sm text-[var(--muted-foreground)]">
-                    If you're using dynamic gap spacing, calculate the inner radius: 
-                    <code className="bg-[var(--muted)] px-1 py-0.5 rounded text-xs"> innerRadius = outerRadius - gap</code>
+                    If you're using dynamic gap spacing, calculate the inner
+                    radius:
+                    <code className="bg-[var(--muted)] px-1 py-0.5 rounded text-xs">
+                      {" "}
+                      innerRadius = outerRadius - gap
+                    </code>
                   </p>
                 </div>
               </li>
@@ -303,8 +344,9 @@ export default function ConcentricRoundingPage() {
                 <div>
                   <strong className="block mb-1">Test visually</strong>
                   <p className="text-sm text-[var(--muted-foreground)]">
-                    Sometimes the math works but it doesn't look right. Trust your eyes. 
-                    Slight adjustments (1-2px) are okay if it looks better.
+                    Sometimes the math works but it doesn't look right. Trust
+                    your eyes. Slight adjustments (1-2px) are okay if it looks
+                    better.
                   </p>
                 </div>
               </li>
@@ -313,17 +355,16 @@ export default function ConcentricRoundingPage() {
                 <div>
                   <strong className="block mb-1">Don't overthink it</strong>
                   <p className="text-sm text-[var(--muted-foreground)]">
-                    For simple cases, common combinations (12px outer / 8px padding / 4px inner) 
-                    work great. You don't need to calculate for every element.
+                    For simple cases, common combinations (12px outer / 8px
+                    padding / 4px inner) work great. You don't need to calculate
+                    for every element.
                   </p>
                 </div>
               </li>
             </ul>
           </section>
-
         </article>
       </div>
     </div>
   );
 }
-

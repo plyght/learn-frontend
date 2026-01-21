@@ -113,8 +113,3 @@ All files (except `page.tsx`) will appear in the file tree navigator.
 - Shiki 3.20.0 (syntax highlighting)
 - TypeScript 5.9.3
 - Bun (package manager)
-
-
-
-
-

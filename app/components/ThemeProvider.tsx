@@ -6,7 +6,10 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     const updateTheme = () => {
       const isDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-      document.documentElement.setAttribute("data-theme", isDark ? "dark" : "light");
+      document.documentElement.setAttribute(
+        "data-theme",
+        isDark ? "dark" : "light",
+      );
     };
 
     updateTheme();
@@ -21,9 +24,3 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
 
   return <>{children}</>;
 }
-
-
-
-
-
-

@@ -11,7 +11,9 @@ export default function Day1Component() {
   const getFaviconUrl = (urlString: string) => {
     if (!urlString) return null;
     try {
-      const urlObj = new URL(urlString.startsWith("http") ? urlString : `https://${urlString}`);
+      const urlObj = new URL(
+        urlString.startsWith("http") ? urlString : `https://${urlString}`,
+      );
       return `https://www.google.com/s2/favicons?domain=${urlObj.hostname}&sz=32`;
     } catch {
       return null;
@@ -45,7 +47,9 @@ export default function Day1Component() {
           <div className="flex items-center justify-between px-3 pt-3 pb-2">
             <div className="flex items-center gap-2">
               <LinkIcon className="w-4 h-4 text-stone-600" />
-              <span className="text-sm font-medium text-stone-900">Input URL</span>
+              <span className="text-sm font-medium text-stone-900">
+                Input URL
+              </span>
             </div>
             <button className="p-1 hover:bg-stone-100 rounded transition-colors">
               <MoreVertical className="w-4 h-4 text-stone-600" />
@@ -67,29 +71,31 @@ export default function Day1Component() {
                 )}
               </div>
               <div className="flex-1 relative min-w-0 overflow-hidden px-2 py-2">
-                  {!isFocused && url && (
-                    <div className="absolute inset-0 flex items-center pointer-events-none">
-                      <span className="text-sm text-stone-900 truncate block w-full">{url}</span>
-                    </div>
-                  )}
-                  <input
-                    type="text"
-                    value={url}
-                    onChange={(e) => handleUrlChange(e.target.value)}
-                    onFocus={() => setIsFocused(true)}
-                    onBlur={() => setIsFocused(false)}
-                    placeholder="Enter URL..."
-                    className={`w-full bg-transparent text-sm text-stone-900 placeholder-stone-400 outline-none ${
-                      !isFocused && url ? "opacity-0" : ""
-                    }`}
-                    style={isFocused ? { width: "100%" } : {}}
-                  />
-                  {isFocused && url && (
-                    <>
-                      <div className="absolute inset-y-0 left-0 w-8 bg-gradient-to-r from-stone-100 via-stone-100/50 to-transparent pointer-events-none z-10"></div>
-                      <div className="absolute inset-y-0 right-0 w-8 bg-gradient-to-l from-stone-100 via-stone-100/50 to-transparent pointer-events-none z-10"></div>
-                    </>
-                  )}
+                {!isFocused && url && (
+                  <div className="absolute inset-0 flex items-center pointer-events-none">
+                    <span className="text-sm text-stone-900 truncate block w-full">
+                      {url}
+                    </span>
+                  </div>
+                )}
+                <input
+                  type="text"
+                  value={url}
+                  onChange={(e) => handleUrlChange(e.target.value)}
+                  onFocus={() => setIsFocused(true)}
+                  onBlur={() => setIsFocused(false)}
+                  placeholder="Enter URL..."
+                  className={`w-full bg-transparent text-sm text-stone-900 placeholder-stone-400 outline-none ${
+                    !isFocused && url ? "opacity-0" : ""
+                  }`}
+                  style={isFocused ? { width: "100%" } : {}}
+                />
+                {isFocused && url && (
+                  <>
+                    <div className="absolute inset-y-0 left-0 w-8 bg-gradient-to-r from-stone-100 via-stone-100/50 to-transparent pointer-events-none z-10"></div>
+                    <div className="absolute inset-y-0 right-0 w-8 bg-gradient-to-l from-stone-100 via-stone-100/50 to-transparent pointer-events-none z-10"></div>
+                  </>
+                )}
               </div>
             </div>
 

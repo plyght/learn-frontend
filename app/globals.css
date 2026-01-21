@@ -42,7 +42,7 @@
   --ceramic-positive: var(--ceramic-green-400);
   --ceramic-warning: var(--ceramic-orange-500);
   --ceramic-bg-separator: var(--ceramic-gray-1300);
-  
+
   /* Force dark mode ceramic colors */
   --ceramic-primary: #f6f6f7;
   --ceramic-secondary: #adadb7;

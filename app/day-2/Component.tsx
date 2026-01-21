@@ -53,11 +53,20 @@ function SettingsIcon() {
 }
 
 // Badge Component
-function Badge({ children, variant }: { children: React.ReactNode; variant: "green" | "orange" }) {
-  const baseClasses = "relative inline-flex shrink-0 items-center rounded-sm px-2 py-1 text-xs font-medium ring-1 ring-inset";
+function Badge({
+  children,
+  variant,
+}: {
+  children: React.ReactNode;
+  variant: "green" | "orange";
+}) {
+  const baseClasses =
+    "relative inline-flex shrink-0 items-center rounded-sm px-2 py-1 text-xs font-medium ring-1 ring-inset";
   const variantClasses = {
-    green: "bg-(--ceramic-green-400)/16 text-(--ceramic-positive) ring-(--ceramic-green-400)/16",
-    orange: "bg-(--ceramic-orange-500)/24 text-(--ceramic-warning) ring-(--ceramic-orange-500)/16",
+    green:
+      "bg-(--ceramic-green-400)/16 text-(--ceramic-positive) ring-(--ceramic-green-400)/16",
+    orange:
+      "bg-(--ceramic-orange-500)/24 text-(--ceramic-warning) ring-(--ceramic-orange-500)/16",
   };
 
   return (
@@ -68,8 +77,19 @@ function Badge({ children, variant }: { children: React.ReactNode; variant: "gre
 }
 
 // Action Button Component
-function ActionButton({ icon: Icon, label, href, onClick }: { icon: React.ComponentType; label: string; href?: string; onClick?: () => void }) {
-  const buttonClasses = "group/button inline-flex flex-none shrink-0 select-none transition relative text-start overflow-hidden justify-between rounded-[0.375rem] text-(--ceramic-primary) hover:bg-(--ceramic-gray-1100) hover:ring-1 hover:ring-[#3D3D4A]/88 p-1.5";
+function ActionButton({
+  icon: Icon,
+  label,
+  href,
+  onClick,
+}: {
+  icon: React.ComponentType;
+  label: string;
+  href?: string;
+  onClick?: () => void;
+}) {
+  const buttonClasses =
+    "group/button inline-flex flex-none shrink-0 select-none transition relative text-start overflow-hidden justify-between rounded-[0.375rem] text-(--ceramic-primary) hover:bg-(--ceramic-gray-1100) hover:ring-1 hover:ring-[#3D3D4A]/88 p-1.5";
 
   if (href) {
     return (
@@ -107,7 +127,8 @@ function ActionButton({ icon: Icon, label, href, onClick }: { icon: React.Compon
 }
 
 // Table Cell Base Styles
-const cellBaseClasses = "overflow-hidden border-0 px-4 py-4 text-left border-t border-(--ceramic-bg-separator)";
+const cellBaseClasses =
+  "overflow-hidden border-0 px-4 py-4 text-left border-t border-(--ceramic-bg-separator)";
 
 export default function Day2Component() {
   const cardStyles = {
@@ -117,7 +138,8 @@ export default function Day2Component() {
     "--card-section-py": "var(--card-px)",
   } as React.CSSProperties;
 
-  const shadowClasses = "shadow-[inset_0_0_1px_1px_rgba(255,255,255,.01),0_1px_3px_0_rgba(0,0,0,.4),0_0_3px_0_rgba(0,0,0,.2)]";
+  const shadowClasses =
+    "shadow-[inset_0_0_1px_1px_rgba(255,255,255,.01),0_1px_3px_0_rgba(0,0,0,.4),0_0_3px_0_rgba(0,0,0,.2)]";
 
   return (
     <div className="flex flex-col items-center justify-center p-8">
@@ -181,7 +203,10 @@ export default function Day2Component() {
                             label="View docs"
                             href="https://clerk.com/docs/guides/configure/auth-strategies/social-connections/google"
                           />
-                          <ActionButton icon={SettingsIcon} label="Edit Google settings" />
+                          <ActionButton
+                            icon={SettingsIcon}
+                            label="Edit Google settings"
+                          />
                         </div>
                       </td>
                     </tr>

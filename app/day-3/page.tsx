@@ -36,5 +36,3 @@ export default async function Day3Page() {
     </div>
   );
 }
-
-
